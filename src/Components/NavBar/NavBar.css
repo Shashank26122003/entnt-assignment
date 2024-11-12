@@ -1,0 +1,12 @@
+.navbar-main{
+    height: 10vh;
+    background-color: rgb(14, 10, 10);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3vw;
+}
+
+.navbar-heading{
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}

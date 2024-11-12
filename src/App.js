@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
+import Box from '@mui/material/Box';
+import './App.css'; 
+import NavBar from './Components/NavBar';
+import Footer from './Components/Footer';
+import Home from './Components/Home/Home';
+import JobPostings from './Components/JobPostings';
+import AssessmentManager from './Components/Assesments';
+import CandidateList from './Components/Candidates';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar/>
+      <div className='landing-main'>
+
+      
+      <Routes>
+        <Route path="/"  element={<Home/>}  />
+        <Route path="/jobs"  element={<JobPostings/>}  />
+        <Route path="/assesments"  element={<AssessmentManager/>}  />
+        <Route path="/candidates"  element={<CandidateList/>}  />
+        
+          
+        
+        
+      </Routes>
+      </div>
+      <Footer/>
+    </Router>
   );
 }
 
